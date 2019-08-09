@@ -355,7 +355,7 @@ Resources:
         find /var/www -type f -exec chmod 0664 {} \;
         cd /var/www/html
         touch maintenance.html
-        echo '<html lang="ja"><head><title>AWS Challenge!</title><link rel="stylesheet" href="https://s3.amazonaws.com/exampleloadbalancer-net/demo_site_asset/css/styles.css"></head><body style="background-color: #232f3e;"><div class="container" ><div class="jumbotron text-center"><h2 class="display-1 text-center" style="color:#232f3e;">503 Service Unavailable</h2><h2 class="display-4 text-center" style="color:#232f3e;margin-bottom:50px">error!error!errror!</h2><iframe src="https://giphy.com/embed/heIX5HfWgEYlW" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/cat-laptop-document-heIX5HfWgEYlW">via GIPHY</a></p></div></div></body></html>' > index.html
+        echo '<html lang="ja"><head><title>AWS Challenge!</title><link rel="stylesheet" href="https://s3.amazonaws.com/exampleloadbalancer-net/demo_site_asset/css/styles.css"></head><body style="background-color: #232f3e;"><div class="container" ><div class="jumbotron text-center"><h2 class="display-1 text-center" style="color:#232f3e;">503 Service Unavailable</h2><h2 class="display-4 text-center" style="color:#232f3e;margin-bottom:50px">error!error!errror!</h2><iframe src="https://giphy.com/embed/heIX5HfWgEYlW" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/cat-laptop-document-heIX5HfWgEYlW">via GIPHY</a></p></div></div></body></html>' > maintenance.html
         chown -R ec2-user:apache /var/www/html/maintenance.html
         cat << EOF > .htaccess
         ErrorDocument 503 /maintenance.html
@@ -367,9 +367,9 @@ Resources:
         </IfModule>
         EOF
         sed -i -e 's/AllowOverride none/AllowOverride All/' /etc/httpd/conf/httpd.conf
+        sed -i -e 's/AllowOverride None/AllowOverride All/' /etc/httpd/conf/httpd.conf
         systemctl start httpd
         systemctl enable httpd
-
       Tags:
         - Key: Name
           Value: aws-challenge
