@@ -366,6 +366,7 @@ Resources:
           RewriteRule ^.*$ - [R=503,L]
         </IfModule>
         EOF
+        chown -R ec2-user:apache /var/www/html/.htaccess
         sed -i -e 's/AllowOverride none/AllowOverride All/' /etc/httpd/conf/httpd.conf
         sed -i -e 's/AllowOverride None/AllowOverride All/' /etc/httpd/conf/httpd.conf
         systemctl start httpd
