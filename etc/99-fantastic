@@ -11,6 +11,6 @@ cat << EOF
 Almost done! Last 2 steps!!
 
 # cp index.html /var/www/html/index.html
-# rm .htaccess
+# rm  /var/www/html/.htaccess
 
 EOF
