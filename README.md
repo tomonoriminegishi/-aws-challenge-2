@@ -1,4 +1,4 @@
-# aws-challenge-2
+# aws-challenge-3
 ## aws-challengeとは
 「aws-challenge」とは、 **AWS CloudFormation** や **Serverless Framework** を用いて構築されたAWS環境の不具合を見つけ解決しながらAWSに慣れ親しんでもらうことを目的とした学習課題です。
 
@@ -50,7 +50,7 @@ ssh接続できない。。。
 ## 環境構築方法
 AWS CloudFormationでスタック作成をします。
 
-テンプレートのファイルのアップロードからaws-challenge2.yamlをアップロードします。
+テンプレートのファイルのアップロードからaws-challenge.yamlをアップロードします。
 
 
 
@@ -93,11 +93,11 @@ AWS CloudFormationでデプロイが完了すると出力タブにURLが払い�
 
 続いてEC2にログインして、指示に従い不具合を修正してください。
 
-環境の不具合についてはaws-challenge2.yamlを修正してもいいですし、AWSコンソールに入って調べてもかまいません。
+環境の不具合についてはaws-challenge.yamlを修正してもいいですし、AWSコンソールに入って調べてもかまいません。
 
 解き方は自由です。
 
-それでは、Let's enjoy!
+さあ、解きましょう！楽しいチャレンジの時間デス
 
 ## 注意事項
 
